@@ -1,0 +1,7 @@
+{
+    "pg_host": "localhost",
+    "pg_user": "kari",
+    "pg_password": "exkariba",
+    "pg_database": "kari_music",
+    "kari_mode": "debug"
+}

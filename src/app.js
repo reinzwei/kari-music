@@ -1,3 +1,4 @@
+import 'babel-polyfill'
 import Koa from 'koa';
 
 var app = new Koa();

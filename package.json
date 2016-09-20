@@ -1,0 +1,35 @@
+{
+  "name": "kari-music",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "build": "babel src --out-dir app",
+    "start": "node --harmony app/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reinzwei/kari-music.git"
+  },
+  "author": "reinzwei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reinzwei/kari-music/issues"
+  },
+  "homepage": "https://github.com/reinzwei/kari-music#readme",
+  "dependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-node6": "^11.0.0",
+    "babel-preset-stage-3": "^6.11.0",
+    "koa": "^2.0.0-alpha.7",
+    "koa-bodyparser": "^3.2.0",
+    "koa-convert": "^1.2.0",
+    "koa-json": "^2.0.2",
+    "koa-morgan": "^1.0.1",
+    "koa-router": "^7.0.1",
+    "koa-static": "^3.0.0",
+    "sequelize": "^3.24.3"
+  },
+  "devDependencies": {}
+}

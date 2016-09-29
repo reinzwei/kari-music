@@ -3,8 +3,12 @@ import Koa from 'koa';
 import Sequelize from 'sequelize';
 import config from '../kari-config.json';
 
-var app = new Koa();
 
+/*import models*/
+import User from './models/user';
+
+/*initialize modules*/
+var app = new Koa();
 var sequelize = new Sequelize(config.pg_database, config.pg_user, config.pg_password, {
     host: config.pg_host,
     dialect: 'postgres',
@@ -16,28 +20,20 @@ var sequelize = new Sequelize(config.pg_database, config.pg_user, config.pg_pass
     },
 });
 
-var User = sequelize.define('user', {
-    firstName: {
-        type: Sequelize.STRING,
-        field: 'first_name' // Will result in an attribute that is firstName when user facing but first_name in the database
-    },
-    lastName: {
-        type: Sequelize.STRING
-    }
-}, {
-    freezeTableName: true // Model tableName will be the same as the model name
-});
+/*initialize models*/
+var newuser = new User(sequelize,Sequelize);
 
-User.sync({force: true}).then(function () {
+/*define routes*/
+newuser.sync({force: true}).then(function () {
     // Table created
-    return User.create({
+    return newuser.create({
         firstName: 'John',
         lastName: 'Hancock'
     });
 });
 
-
 app.use(async (ctx) => {
+
     ctx.body = 'Hello world';
 });
 

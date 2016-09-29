@@ -3,3 +3,4 @@
 node_modules/
 src/
 app/
+npm-debug.log*
